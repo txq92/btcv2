@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  crypto-detector:
+    build: .
+    container_name: crypto-signal-detector
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./charts:/app/charts
+      - ./logs:/app/logs
+    depends_on:
+      - mongodb
+    networks:
+      - crypto-network
+
+  mongodb:
+    image: mongo:7.0
+    container_name: crypto-mongodb
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: crypto_trading
+    volumes:
+      - mongodb_data:/data/db
+      - ./mongo-init:/docker-entrypoint-initdb.d
+    ports:
+      - "27017:27017"
+    networks:
+      - crypto-network
+
+volumes:
+  mongodb_data:
+
+networks:
+  crypto-network:
+    driver: bridge
