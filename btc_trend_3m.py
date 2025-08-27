@@ -59,7 +59,7 @@ VOLATILITY_THRESHOLD = 2.0      # High volatility threshold
 # Telegram configuration
 #TELEGRAM_CHAT_ID = "-4706073326"
 TELEGRAM_BOT_TOKEN = "8226246719:AAHXDggFiFYpsgcq1vwTAWv7Gsz1URP4KEU"
-TELEGRAM_CHAT_ID = "-4967023521"
+TELEGRAM_CHAT_ID = "-4985792721"
 
 # MongoDB configuration
 MONGO_CONNECTION_STRING = "mongodb://localhost:27017/"
