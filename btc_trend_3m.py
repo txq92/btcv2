@@ -2028,6 +2028,7 @@ def main():
 
 if __name__ == "__main__":
     try:
+        send_telegram_photo('start_server.png', "🚀 01 Started")
         main()
     except KeyboardInterrupt:
         print("\nDetected Ctrl+C, shutting down gracefully...")
